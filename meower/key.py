@@ -1,1 +1,0 @@
-key = 'yqr4ca@0-cnk(37mrb!vj)y)vfzt&*t32i7*clh+x-+=l9^+nh'
