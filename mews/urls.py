@@ -22,6 +22,6 @@ from django.conf import settings
 
 urlpatterns = [
 	path('',views.home,name='home'),
-	path('mews/get/',views.getMews,name="getMews"),
+	path('mews/get/<int:first>-<int:last>/',views.getMews,name="getMews"),
 	path('mews/add/',views.newMew,name="newMew"),
 ]

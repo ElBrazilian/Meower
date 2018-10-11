@@ -12,13 +12,15 @@ def parsedDate(date):
 
 def home(request):
 
-	mews = Mew.objects.all()
+	mews = Mew.objects.all()[0:5]
 	for mew in mews:
+		print(mew.id)
 		mew.date = parsedDate(mew.date)
 	return render(request,'mews/home.html',{'mews':mews})
 
-def getMews(request):
-	mews = Mew.objects.all()
+def getMews(request,first,last):
+	mews = Mew.objects.all()[first:last]
+
 	for mew in mews:
 		mew.date = parsedDate(mew.date)
 	return render(request,'mews/get.html',{'mews':mews})

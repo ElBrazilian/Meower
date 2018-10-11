@@ -51,6 +51,7 @@ body
 	background-color: white;
 	border:1px solid black;
 	margin-top:2%;
+	margin-bottom:2%;
 	padding:1% 2%;
 	border-radius: 10px;
 }
@@ -86,12 +87,32 @@ body
 	padding: 2% 4%;
 
 }
+#paginationParent
+{
+	margin-bottom:3%;
+	width:100%;
+}
+#pagination
+{
+	display:block;
+	width:20%;
+	height:80px;
+	font-family: 'Orbitron', sans-serif;
+	font-size:150%;
+	margin:0 auto;
+}
 #loading
 {
 	width:20%;
 	padding:10% 0;
 	margin: 0 auto;
 }
+@media (max-width: 1200px) {	
+ 	#pagination
+ 	{
+ 		width:45%;
+ 	}
+ }
 @media (max-width: 1000px) {
  	#main h1 {
   	  font-size:450%;
@@ -112,6 +133,10 @@ body
 	.date
 	{
 		font-size:250%;
+	}
+	#pagination
+	{
+		width:60%;
 	}
 }
 @media (max-width: 750px) {

@@ -56,7 +56,10 @@
 			$form = $('#form'),
 			$loading = $('#loading'),
 			$error = $('#error'),
-			$mews = $('#mews');
+			$mews = $('#mews'),
+			$pagination = $('#pagination');
+
+		var currentNumberOfMews = 5
 
 		$form.submit(function(e)
 		{
@@ -124,7 +127,7 @@
 						function(data)
 						{
 							$.get(
-								'mews/get/',
+								'mews/get/0-' + currentNumberOfMews,
 								function(data,textStatus,jqXHR)
 								{
 									// data = le html a remplacer
@@ -194,6 +197,29 @@
 				correctUsername($username,true);
 				correctContent($content,true);
 			}
+		});
+
+		// PAGINATION
+		$pagination.click(function(e)
+		{
+			e.preventDefault();
+			currentNumberOfMews += 5;
+			$.get(
+				'mews/get/0-' + currentNumberOfMews,
+				function(data,textStatus,jqXHR)
+				{
+					if($mews.html() === $(data).html())
+					{
+						alert('No more mews to show !');
+					}
+					else
+					{
+						$mews.replaceWith($(data));
+						$mews = $('#mews');
+						$mews.show();		
+					}	
+				}
+			);
 		});
 
 
