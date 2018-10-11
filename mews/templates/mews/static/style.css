@@ -1,0 +1,121 @@
+body
+{
+	background-color:rgb(235, 235, 235);
+	min-width:475px;
+}
+
+#mews
+{
+	padding:3% 3% 5% 3%; 
+}
+.username
+{
+	font-family: 'Permanent Marker', sans-serif;	
+	font-size:240%;
+	font-weight:bold;
+	padding-left: 1%;
+}
+.content
+{
+	font-family: 'Poppins', sans-serif;
+	font-size:150%;
+}
+.date
+{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size:150%;
+}
+.mew
+{
+	
+	margin-bottom: 5%;
+	padding-bottom: 5%;
+	box-shadow: 0px 24px 4px -24px black;
+}
+.mew:last-child
+{
+	box-shadow: none;
+}
+#error
+{
+	background-color: #990000;
+	text-align:center;
+	padding: 2% 0;
+	font-size:300%;
+	font-family: 'Permanent Marker', sans-serif;
+	color:white;
+}
+#main
+{
+	background-color: white;
+	border:1px solid black;
+	margin-top:2%;
+	padding:1% 2%;
+	border-radius: 10px;
+}
+#main h1
+{
+	text-align:center;
+	font-family: 'Permanent Marker', sans-serif;
+	font-size:300%;
+}
+#main form
+{
+	padding-left: 2%;
+	padding-right:2%;
+
+	margin-top:3%;
+}
+#main form legend
+{
+	padding-bottom:10px;
+	font-size:200%;
+	font-family: 'Cantarell', sans-serif;
+}
+#main form label
+{
+	font-size:150%;
+	font-family: 'Orbitron', sans-serif;
+
+}
+#main form button
+{
+	font-size:120%;
+	font-family: 'Orbitron', sans-serif;
+	padding: 2% 4%;
+
+}
+#loading
+{
+	width:20%;
+	padding:10% 0;
+	margin: 0 auto;
+}
+@media (max-width: 1000px) {
+ 	#main h1 {
+  	  font-size:450%;
+  	}
+	#main form legend
+	{
+		padding-bottom:10px;
+		font-size:300%;
+	}
+	.username
+	{
+		font-size:350%;
+	}
+	.content
+	{
+		font-size:250%;
+	}
+	.date
+	{
+		font-size:250%;
+	}
+}
+@media (max-width: 750px) {
+ 	#main h1 {
+ 	   font-size:350%;
+ 	}
+}

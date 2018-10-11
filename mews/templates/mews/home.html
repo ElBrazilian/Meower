@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Cantarell:700i|Orbitron|Permanent+Marker" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css"%}">
+		<link rel="stylesheet" type="text/css" href="{% static "style.css"%}">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="icon" href="{% static "favicon.ico" %}" />
+
+		<title>Meower - Twitter for cats 😸</title>
+	</head>
+	<body>
+		<div style="display:none;" class="container-fluid" id="error"></div>
+		<div class="container-fluid">
+			<div id="main" class="col-md-8 col-md-offset-2 col-lg-10 col-lg-offset-1 col-xs-12 col-sm-12">
+				<h1>Meower - Twitter Full Stack Clone</h1>
+				<img style="display:none;" id="loading" src="{% static "assets/loading.gif" %}">
+				<div class="row">
+					<form method="post" action="{% url "newMew" %}" id="form" class="well col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 col-md-8 col-md-offset-2">
+						{% csrf_token %}
+						<legend>Post a new Mew ! 😸</legend>
+						<div class="form-group">
+							<label class="control-label" for="username">Your Name</label>
+							<input class="form-control" type="text" autocomplete="off" name="username" id="username">
+							<span class="help-block"></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="content">Your Mew</label>
+							<textarea style="resize:none;" rows="7" id="content" name="content" class="form-control"></textarea>
+							<span class="help-block"></span>
+						</div>
+						<button class="btn btn-primary" id="submit">SEND MEW 🐈</button>
+
+					</form>
+				</div>
+				<div class="row">
+					<div id="mews" class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+						{% for mew in mews %}
+						<div class="mew">
+							<span class="username">{{ mew.username|safe }}</span><br/>
+							<span class="content">{{ mew.content|safe }}</span><br/>
+							<span class="date">{{ mew.date|safe }}</span>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static "client.js" %}"></script>
+	</body>
+</html>
