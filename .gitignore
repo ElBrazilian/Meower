@@ -2,3 +2,4 @@
 *.sqlite3
 *.pyc
 meower/settings.py
+meower/key.py
